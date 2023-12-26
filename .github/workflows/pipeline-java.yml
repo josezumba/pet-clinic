@@ -17,4 +17,9 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          echo "hola mundo"
+          echo "Building"
+      - name: SonarCloud Analysis
+        run: |
+          echo "hola 2"
+          chmod +x gradlew
+          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONARCLOUD }}
